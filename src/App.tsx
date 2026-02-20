@@ -110,7 +110,7 @@ function App() {
     { id: '1', sender: 'kratos', text: 'Greetings, Commander. 300 Spartans stand ready. Current active: 2. How shall we conquer?', timestamp: new Date().toISOString() }
   ])
   const [chatInput, setChatInput] = useState('')
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  // Sidebar uses CSS :hover
   const chatEndRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -392,11 +392,7 @@ function App() {
 
   return (
     <div className="kronos-dashboard">
-      <aside 
-        className={`sidebar ${sidebarOpen ? 'open' : ''}`}
-        onMouseEnter={() => setSidebarOpen(true)}
-        onMouseLeave={() => setSidebarOpen(false)}
-      >
+      <aside className="sidebar group">
         <div className="sidebar-header">
           <h1>⚔️</h1>
           <span className="sidebar-title">KRONOS</span>
